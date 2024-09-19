@@ -5,14 +5,6 @@ class Calculator {
   constructor() {
     this.#num1 = document.querySelector("#num1");
     this.#num2 = document.querySelector("#num2");
-    this.mark = document.querySelector("#operation");
-    this.result = document.querySelector("#result");
-    this.calcBtn = document.querySelector("#calculateBtn");
-    // this.event = document
-    //   .querySelector("#calculateBtn")
-    //   .addEventListener("click", function () {
-    //     console.log(calc.compute(document.querySelector("#option")));
-    //   });
   }
 
   get num1() {
@@ -32,7 +24,6 @@ class Calculator {
   }
 
   add() {
-    // console.log(this.#num1.value, this.#num2.value);
     return +this.#num1.value + +this.#num2.value;
   }
 
@@ -57,13 +48,10 @@ class Calculator {
 }
 
 const calc = new Calculator();
-// console.log(calc);
-// console.log(calc.compute());
 
 document.querySelector("#calculateBtn").addEventListener("click", function () {
-  const a = document.querySelector("#operation");
-  const b = calc.compute(a.value);
-  // console.log(a);
-  console.log(b);
-  document.querySelector("#result").textContent = b;
+  const selectMark = document.querySelector("#operation");
+  const getMarkValue = calc.compute(selectMark.value);
+  console.log(getMarkValue);
+  document.querySelector("#result").textContent = getMarkValue;
 });
